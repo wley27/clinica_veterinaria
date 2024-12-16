@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Veterinaria</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div id="connection-status" class="hidden">
+        <p>No tienes conexión a Internet. Por favor, verifica tu conexión.</p>
+    </div>    
+    <header>
+        <div class="container">
+            <img src="../img/logo.png" alt="Logo de la Clínica Veterinaria" class="logo">
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Conócenos</a></li>
+                    <li><a href="location.html">Ubicación</a></li>
+                    <li><a href="appointment.html">Agendar Cita</a></li>
+                    <li><a href="login.html">Iniciar sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- Sección Hero -->
+        <section class="hero">
+            <h1>¡Bienvenidos a nuestra Clínica Veterinaria!</h1>
+            <p>Nos alegra que estés aquí, donde el cuidado y bienestar de tus mascotas es nuestra prioridad.</p>
+            <a href="appointment.html" class="btn-primary">Agendar Cita</a>
+        </section>
+    
+        <!-- Servicios Destacados -->
+        <section class="services">
+            <h2>Nuestros Servicios</h2>
+            <div class="service-container">
+                <div class="service-item">
+                    <img src="../img/consulta.png" alt="Consulta Veterinaria">
+                    <h3>Consulta Veterinaria</h3>
+                    <p>Atención personalizada para la salud de tus mascotas.</p>
+                </div>
+                <div class="service-item">
+                    <img src="../img/vacuna.png" alt="Vacunación">
+                    <h3>Vacunación</h3>
+                    <p>Protege a tus mascotas con nuestras vacunas seguras.</p>
+                </div>
+                <div class="service-item">
+                    <img src="../img/cirugia.png" alt="Cirugía">
+                    <h3>Cirugía</h3>
+                    <p>Procedimientos quirúrgicos con tecnología avanzada.</p>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Testimonios -->
+        <section class="testimonials">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <div class="testimonial-item">
+                <p>"El mejor lugar para cuidar a mis mascotas. Excelente servicio y atención."</p>
+                <span>- Ana Gómez</span>
+            </div>
+            <div class="testimonial-item">
+                <p>"Gracias por salvar la vida de mi perro. ¡Son los mejores!"</p>
+                <span>- Carlos Pérez</span>
+            </div>
+        </section>
+    
+        <!-- Sección de Noticias -->
+        <section class="blog">
+            <h2>Últimas Noticias</h2>
+            <div class="blog-container">
+                <div class="blog-post">
+                    <h3>5 Tips para cuidar a tu mascota en invierno</h3>
+                    <p>Descubre cómo proteger a tus mascotas durante la temporada fría...</p>
+                    <a href="blog-post1.html">Leer más</a>
+                </div>
+                <div class="blog-post">
+                    <h3>¿Cuándo llevar a tu mascota al veterinario?</h3>
+                    <p>Te ayudamos a identificar los síntomas clave que indican una visita necesaria...</p>
+                    <a href="blog-post2.html">Leer más</a>
+                </div>
+            </div>
+        </section>
+    
+       <!-- Sección de Contacto Simplificada -->
+<section class="contact-section">
+    <h2>Contáctanos</h2>
+    <p>¿Tienes preguntas o necesitas más información? ¡Estamos aquí para ayudarte!</p>
+    <a href="contact.html" class="btn-primary">Ir a la página de contacto</a>
+</section>
+
+        
+    </main>
+    
+
+    <footer>
+        <p>&copy; 2024 Clínica Veterinaria. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>
+<a href="https://wa.me/0939245737" class="whatsapp-button" target="_blank">
+    <img src="../img/whatsapp-icon.png" alt="WhatsApp">
+</a>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+        const menu = document.querySelector('.menu');
+        
+        if (isLoggedIn) {
+            // Mostrar opciones para usuarios logueados
+            menu.innerHTML = `
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Conócenos</a></li>
+                <li><a href="location.html">Ubicación</a></li>
+                <li><a href="appointment.html">Agendar Cita</a></li>
+                <li><a href="pets.html">Mis Mascotas</a></li>
+                <li><a id="logout" href="#">Cerrar sesión</a></li>
+            `;
+
+            document.getElementById('logout').addEventListener('click', () => {
+                localStorage.clear(); // Cerrar sesión
+                alert('Has cerrado sesión');
+                window.location.href = 'index.html';
+            });
+        } else {
+            // Mostrar opciones para usuarios no logueados
+            menu.innerHTML = `
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Conócenos</a></li>
+                <li><a href="location.html">Ubicación</a></li>
+                <li><a href="login.html">Iniciar sesión</a></li>
+            `;
+        }
+    });
+</script>

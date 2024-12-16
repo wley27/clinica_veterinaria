@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conócenos</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="../img/logo.png" alt="Logo de la Clínica Veterinaria" class="logo">
+            <nav>
+                <ul class="menu">
+                    <li><a href="hero/index.html">Inicio</a></li>
+                    <li><a href="about.html">Conócenos</a></li>
+                    <li><a href="location.html">Ubicación</a></li>
+                    <li><a href="appointment.html">Agendar Cita</a></li>
+                    <li><a href="login.html">Iniciar sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="introduction">
+            <h1>Conoce Nuestra Clínica Veterinaria</h1>
+            <p>En nuestra clínica, el bienestar animal es nuestra prioridad. Descubre nuestra historia, equipo, instalaciones y todo lo que nos hace únicos.</p>
+        </section>
+
+        <!-- Historia -->
+        <section class="history">
+            <h2>Nuestra Historia</h2>
+            <p>Nuestra clínica fue fundada en 2024, con la misión de ofrecer servicios veterinarios de alta calidad. Creemos en el amor y respeto por cada mascota, y trabajamos diariamente para garantizar su bienestar.</p>
+            <h3>Valores</h3>
+            <ul>
+                <li>Compromiso</li>
+                <li>Amor por los animales</li>
+                <li>Excelencia profesional</li>
+            </ul>
+            <h3>Metas a Largo Plazo</h3>
+            <p>Nuestra meta es convertirnos en un referente nacional en el cuidado animal, promoviendo la adopción responsable y campañas comunitarias de bienestar animal.</p>
+        </section>
+
+        <!-- Equipo de Trabajo -->
+        <section class="team">
+            <h2>Nuestro Equipo</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="../img/veterinario1.png" alt="Dr. Juan Pérez">
+                    <h3>Dra. Ana López</h3>
+                    <p>Especialista en cirugía veterinaria.</p>
+                    <blockquote>"Ayudar a las mascotas a vivir una vida plena es mi pasión."</blockquote>
+                </div>
+                <div class="team-member">
+                    <img src="../img/veterinario2.png" alt="Dra. Ana López">
+                    <h3>Dr. Juan Pérez</h3>
+                    <p>Especialista en medicina preventiva.</p>
+                    <blockquote>"Cuidar de los animales es cuidar de nuestras familias."</blockquote>
+                </div>
+                <!-- Agrega más miembros según sea necesario -->
+            </div>
+        </section>
+
+        <!-- Infraestructura -->
+        <section class="infrastructure">
+            <h2>Nuestras Instalaciones</h2>
+            <p>Contamos con áreas modernas y equipadas para garantizar el mejor cuidado de tus mascotas.</p>
+            <div class="gallery">
+                <img src="../img/sala_espera.png" alt="Sala de Espera">
+                <img src="../img/quirófano.png" alt="Quirófano">
+                <img src="../img/hospitalizacion.png" alt="Área de Hospitalización">
+            </div>
+        </section>
+
+        <!-- Compromiso con la Comunidad -->
+        <section class="community">
+            <h2>Compromiso con la Comunidad</h2>
+            <p>Participamos activamente en campañas de vacunación, adopción y educación sobre el cuidado responsable de mascotas.</p>
+            <ul>
+                <li>Campañas de vacunación gratuitas.</li>
+                <li>Colaboración con refugios locales.</li>
+                <li>Charlas educativas en escuelas y eventos comunitarios.</li>
+            </ul>
+        </section>
+
+        <!-- Certificaciones y Reconocimientos -->
+        <section class="certifications">
+            <h2>Certificaciones y Reconocimientos</h2>
+            <p>Somos una clínica certificada por la ULEAM y hemos recibido reconocimientos por nuestra labor comunitaria y excelencia en el cuidado animal.</p>
+        </section>
+
+        <!-- Mensaje Personal -->
+        <section class="personal-message">
+            <h2>Un Mensaje de Nuestro Fundador</h2>
+            <blockquote>
+                "Fundé esta clínica con el sueño de crear un lugar donde las mascotas reciban el cuidado y amor que merecen. Gracias por confiar en nosotros. Seguiremos trabajando para ser el hogar lejos del hogar para tus mejores amigos."
+                <br><strong>- Freddy De La Ese </strong>
+            </blockquote>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Clínica Veterinaria. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+        </div>
+    </footer>
+    
+</body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+        const menu = document.querySelector('.menu');
+        
+        if (isLoggedIn) {
+            // Mostrar opciones para usuarios logueados
+            menu.innerHTML = `
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Conócenos</a></li>
+                <li><a href="location.html">Ubicación</a></li>
+                <li><a href="appointment.html">Agendar Cita</a></li>
+                <li><a href="pets.html">Mis Mascotas</a></li>
+                <li><a id="logout" href="#">Cerrar sesión</a></li>
+            `;
+
+            document.getElementById('logout').addEventListener('click', () => {
+                localStorage.clear(); // Cerrar sesión
+                alert('Has cerrado sesión');
+                window.location.href = 'index.html';
+            });
+        } else {
+            // Mostrar opciones para usuarios no logueados
+            menu.innerHTML = `
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Conócenos</a></li>
+                <li><a href="location.html">Ubicación</a></li>
+                <li><a href="login.html">Iniciar sesión</a></li>
+            `;
+        }
+    });
+</script>
+

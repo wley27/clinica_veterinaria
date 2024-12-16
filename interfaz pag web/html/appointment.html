@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Cita</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="../img/logo.png" alt="Logo de la Clínica Veterinaria" class="logo">
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Conócenos</a></li>
+                    <li><a href="location.html">Ubicación</a></li>
+                    <li><a href="appointment.html">Agendar Cita</a></li>
+                    <li><a href="login.html">Iniciar sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="appointment">
+            <h2>Agendar Cita</h2>
+            <form id="appointment-form">
+                <div class="form-group">
+                    <label for="pet-name">Nombre de la mascota:</label>
+                    <input type="text" id="pet-name" placeholder="Nombre de tu mascota" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="owner-name">Nombre del dueño:</label>
+                    <input type="text" id="owner-name" placeholder="Tu nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Servicio:</label>
+                    <select id="service" required>
+                        <option value="" disabled selected>Selecciona un servicio</option>
+                        <option value="Consulta General">Consulta General</option>
+                        <option value="Vacunación">Vacunación</option>
+                        <option value="Cirugía">Cirugía</option>
+                        <option value="Desparasitación">Desparasitación</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Fecha:</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Hora:</label>
+                    <input type="time" id="time" required>
+                </div>
+
+                <button type="submit" class="btn-primary">Agendar</button>
+
+                <div class="form-group">
+                    <button type="button" onclick="window.location.href='historial.html'" class="btn btn-secondary">
+                        Ver historial
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Modal de Confirmación -->
+        <div id="confirmation-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h3>Confirmación de Cita</h3>
+                <p><strong>Mascota:</strong> <span id="confirm-pet"></span></p>
+                <p><strong>Dueño:</strong> <span id="confirm-owner"></span></p>
+                <p><strong>Servicio:</strong> <span id="confirm-service"></span></p>
+                <p><strong>Fecha:</strong> <span id="confirm-date"></span></p>
+                <p><strong>Hora:</strong> <span id="confirm-time"></span></p>
+                <button id="confirm-button" class="btn-primary">Confirmar Cita</button>
+            </div>
+        </div>
+
+        <!-- Mensaje Final -->
+        <div id="success-message" class="message" style="display: none;">
+            <h3>¡Cita Agendada!</h3>
+            <p>Tu cita ha sido registrada exitosamente. Te esperamos en nuestra clínica.</p>
+        </div>
+    </main>
+    <script src="../js/script.js"></script>
+</body>
+</html>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+        const menu = document.querySelector('.menu');
+        
+        if (isLoggedIn) {
+            // Mostrar opciones para usuarios logueados
+            menu.innerHTML = `
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Conócenos</a></li>
+                <li><a href="location.html">Ubicación</a></li>
+                <li><a href="appointment.html">Agendar Cita</a></li>
+                <li><a href="pets.html">Mis Mascotas</a></li>
+                <li><a id="logout" href="#">Cerrar sesión</a></li>
+            `;
+
+            document.getElementById('logout').addEventListener('click', () => {
+                localStorage.clear(); // Cerrar sesión
+                alert('Has cerrado sesión');
+                window.location.href = 'index.html';
+            });
+        } else {
+            // Mostrar opciones para usuarios no logueados
+            menu.innerHTML = `
+                <li><a href="hero/index.htmll">Inicio</a></li>
+                <li><a href="about.html">Conócenos</a></li>
+                <li><a href="location.html">Ubicación</a></li>
+                <li><a href="login.html">Iniciar sesión</a></li>
+            `;
+        }
+    });
+</script>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Veterinaria</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="../img/logo.png" alt="Logo de la Clínica Veterinaria" class="logo">
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Conócenos</a></li>
+                    <li><a href="location.html">Ubicación</a></li>
+                    <li><a href="appointment.html">Agendar Cita</a></li>
+                    <li><a href="login.html">Iniciar sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascotas Registradas</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <main class="pets-container">
+        <h1>Mascotas Registradas</h1>
+        <div class="pets-grid" id="petsGrid">
+            <!-- Mascota 1 -->
+            <div class="pet-card">
+                <h2>Nombre: Luna</h2>
+                <p><strong>Fecha de nacimiento:</strong> 12/05/2020</p>
+                <p><strong>Especie:</strong> Perro</p>
+                <p><strong>Raza:</strong> Labrador Retriever</p>
+                <p><strong>Sexo:</strong> Hembra</p>
+                <p><strong>Esterilización:</strong> Sí</p>
+            </div>
+
+            <!-- Mascota 2 -->
+            <div class="pet-card">
+                <h2>Nombre: Tom</h2>
+                <p><strong>Fecha de nacimiento:</strong> 22/09/2018</p>
+                <p><strong>Especie:</strong> Gato</p>
+                <p><strong>Raza:</strong> Siamés</p>
+                <p><strong>Sexo:</strong> Macho</p>
+                <p><strong>Esterilización:</strong> No</p>
+            </div>
+        </div>
+
+        <!-- Botón para agregar mascota -->
+        <button class="add-pet-btn" onclick="openModal()">Agregar Mascota</button>
+    </main>
+
+    <!-- Modal para agregar mascota -->
+    <div class="modal" id="addPetModal">
+        <div class="modal-content">
+            <h2>Agregar Nueva Mascota</h2>
+            <form id="addPetForm">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="birthdate">Fecha de Nacimiento:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+
+                <label for="species">Especie:</label>
+                <input type="text" id="species" name="species" required>
+
+                <label for="breed">Raza:</label>
+                <input type="text" id="breed" name="breed" required>
+
+                <label for="sex">Sexo:</label>
+                <select id="sex" name="sex" required>
+                    <option value="Hembra">Hembra</option>
+                    <option value="Macho">Macho</option>
+                </select>
+
+                <label for="sterilized">Esterilización:</label>
+                <select id="sterilized" name="sterilized" required>
+                    <option value="Sí">Sí</option>
+                    <option value="No">No</option>
+                </select>
+
+                <button type="submit">Guardar Mascota</button>
+                <button type="button" class="close-btn" onclick="closeModal()">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirmación -->
+    <div class="confirmation" id="confirmationMessage">¡Mascota agregada con éxito!</div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+        const menu = document.querySelector('.menu');
+        
+        if (isLoggedIn) {
+            // Mostrar opciones para usuarios logueados
+            menu.innerHTML = `
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Conócenos</a></li>
+                <li><a href="location.html">Ubicación</a></li>
+                <li><a href="appointment.html">Agendar Cita</a></li>
+                <li><a href="pets.html">Mis Mascotas</a></li>
+                <li><a id="logout" href="#">Cerrar sesión</a></li>
+            `;
+
+            document.getElementById('logout').addEventListener('click', () => {
+                localStorage.clear(); // Cerrar sesión
+                alert('Has cerrado sesión');
+                window.location.href = 'index.html';
+            });
+        } else {
+            // Mostrar opciones para usuarios no logueados
+            menu.innerHTML = `
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Conócenos</a></li>
+                <li><a href="location.html">Ubicación</a></li>
+                <li><a href="login.html">Iniciar sesión</a></li>
+            `;
+        }
+    });
+</script>

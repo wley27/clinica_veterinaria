@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Citas</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="../img/logo.png" alt="Logo de la Clínica Veterinaria" class="logo">
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Conócenos</a></li>
+                    <li><a href="location.html">Ubicación</a></li>
+                    <li><a href="appointment.html">Agendar Cita</a></li>
+                    <li><a href="login.html">Iniciar sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h1>Historial de Citas</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Nombre de Mascota</th>
+                    <th>Servicio</th>
+                    <th>Veterinario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2024-12-10</td>
+                    <td>10:00 AM</td>
+                    <td>Tom</td>
+                    <td>Consulta General</td>
+                    <td>Dra. López</td>
+                </tr>
+                <tr>
+                    <td>2024-12-05</td>
+                    <td>02:30 PM</td>
+                    <td>Luna</td>
+                    <td>Vacunación</td>
+                    <td>Dra. Lopez</td>
+                </tr>
+                <tr>
+                    <td>2024-11-20</td>
+                    <td>09:00 AM</td>
+                    <td>Rocky</td>
+                    <td>Desparasitación</td>
+                    <td>Dr. Pérez</td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="appointment.html" class="cta-button">Agendar Nueva Cita</a>
+    </main>
+</body>
+</html>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+        const menu = document.querySelector('.menu');
+        
+        if (isLoggedIn) {
+            // Mostrar opciones para usuarios logueados
+            menu.innerHTML = `
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Conócenos</a></li>
+                <li><a href="location.html">Ubicación</a></li>
+                <li><a href="appointment.html">Agendar Cita</a></li>
+                <li><a href="pets.html">Mis Mascotas</a></li>
+                <li><a id="logout" href="#">Cerrar sesión</a></li>
+            `;
+
+            document.getElementById('logout').addEventListener('click', () => {
+                localStorage.clear(); // Cerrar sesión
+                alert('Has cerrado sesión');
+                window.location.href = 'index.html';
+            });
+        } else {
+            // Mostrar opciones para usuarios no logueados
+            menu.innerHTML = `
+                <li><a href="hero/index.htmll">Inicio</a></li>
+                <li><a href="about.html">Conócenos</a></li>
+                <li><a href="location.html">Ubicación</a></li>
+                <li><a href="login.html">Iniciar sesión</a></li>
+            `;
+        }
+    });
+</script>

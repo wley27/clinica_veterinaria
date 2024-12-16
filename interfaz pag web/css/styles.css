@@ -1,0 +1,920 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Encabezado */
+header {
+    background-color: #095E63;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Separa el logo y el menú */
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+
+/* Logo */
+.logo {
+    height: 80px; /* Tamaño del logo */
+    flex-shrink: 0; /* Asegura que el logo no se reduzca */
+}
+
+/* Menú */
+nav {
+    flex-grow: 2; /* Permite que el menú ocupe todo el espacio restante */
+    display: flex;
+    justify-content: flex-end; /* Alinea el menú a la derecha */
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 50px; /* Espaciado entre las opciones del menú */
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #f1f1f1;
+}
+
+/* Contenido principal */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #095E63;
+    color: rgb(227, 223, 223);
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #095E63;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #095E63;
+    color: rgb(24, 15, 15);
+}
+/* Hero Section */
+.hero {
+    text-align: center;
+    background: url('img/banner.jpg') no-repeat center center/cover;
+    color: #000000;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.hero {
+    background: url('../img/hero-fondo.jpg') no-repeat center center;
+    background-size: cover;
+    color: #232b2b;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1); /* Capa semitransparente negra */
+    z-index: -1; /* Envía la capa detrás del texto */
+}
+
+
+.btn-primary {
+    background-color: #095E63;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #095E63;
+}
+
+/* Servicios */
+.services {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.service-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.service-item {
+    text-align: center;
+    width: 30%;
+}
+
+.service-item img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Testimonios */
+.testimonials {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonial-item {
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* Formulario de Contacto */
+/* Contenedor del formulario */
+.contact-form {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 50px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animación al pasar el cursor por el formulario */
+.contact-form:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estructura del formulario */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Campos de entrada y área de texto */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animación al enfocar los campos */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #095E63;
+    box-shadow: 0 0 5px rgba(9, 94, 99, 0.5);
+    outline: none;
+}
+
+/* Botón de envío */
+.contact-form button {
+    width: 106%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #095E63;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Animación al pasar el cursor por el botón */
+.contact-form button:hover {
+    background-color: #074e53;
+    transform: translateY(-3px);
+}
+
+/* Mensaje adicional */
+.contact-form p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Ajustes para área de texto */
+.contact-form textarea {
+    resize: none; /* Evita que el usuario cambie el tamaño del cuadro */
+    height: 100px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #095E63;
+    color: white;
+}
+
+footer .social-links a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+/* Blog Section */
+.blog {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.blog-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.blog-post {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30%;
+}
+
+.blog-post h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.blog-post p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.blog-post a {
+    text-decoration: none;
+    color: #095E63;
+    font-weight: bold;
+}
+
+.blog-post a:hover {
+    text-decoration: underline;
+}
+
+/* Animaciones */
+.service-item img, .testimonial-item, .blog-post {
+    transition: transform 0.3s ease;
+}
+
+.service-item img:hover, .testimonial-item:hover, .blog-post:hover {
+    transform: scale(1.05);
+}
+.whatsapp-button {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+}
+
+.whatsapp-button img {
+    width: 170%;
+    height: 170%;
+}
+/* Estilos del contenedor de login */
+.login-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    text-align: center;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #095E63;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #095E63;
+}
+
+/* Opciones adicionales */
+/* Contenedor principal */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    text-align: center;
+}
+
+/* Título */
+.login-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+/* Campos del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    text-align: left;
+    font-size: 14px;
+    color: #555;
+}
+
+form input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Botón de inicio de sesión */
+form button {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #095E63;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #074e53;
+}
+
+/* Enlaces */
+.login-links {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.login-links a {
+    color: #095E63;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-links a:hover {
+    text-decoration: underline;
+}
+
+/* Botones de redes sociales */
+.social-login {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.google-btn {
+    background-color: #DB4437;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.google-btn:hover {
+    background-color: #c23b2c;
+}
+
+.facebook-btn {
+    background-color: #4267B2;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.facebook-btn:hover {
+    background-color: #365899;
+}
+
+/* General */
+main h2 {
+    margin-top: 20px;
+    color: #095E63;
+}
+
+/* Equipo */
+.team-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.team-member {
+    text-align: center;
+    max-width: 200px;
+}
+
+.team-member img {
+    border-radius: 50%;
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.team-member blockquote {
+    font-style: italic;
+    color: #666;
+}
+
+/* Infraestructura */
+.gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+/* Mensaje personal */
+.personal-message blockquote {
+    font-style: italic;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+    color: #555;
+}
+/* Sección de Contacto */
+.contact-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    max-width: 600px;
+}
+
+.contact-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: #095E63;
+}
+
+.contact-section p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Botón Primario */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #095E63;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Animación al pasar el cursor sobre el botón */
+.btn-primary:hover {
+    background-color: #074e53;
+    transform: translateY(-3px);
+}
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Formulario */
+#appointment-form {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #095E63;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #074e53;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Mensaje de éxito */
+.message {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #e0f9e9;
+    border: 2px solid #0bb90b;
+    border-radius: 10px;
+    max-width: 500px;
+}
+/* Contenedor principal */
+.pets-container {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Título */
+.pets-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #095E63;
+}
+
+/* Grid de mascotas */
+.pets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Tarjeta de mascota */
+.pet-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto hover */
+.pet-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Título del nombre */
+.pet-card h2 {
+    font-size: 1.5rem;
+    color: #095E63;
+    margin-bottom: 10px;
+}
+
+/* Texto */
+.pet-card p {
+    margin: 5px 0;
+    color: #333;
+    font-size: 1rem;
+}
+/*agregar mascotas*/
+/* Contenedor principal */      
+.pets-container {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Título */
+.pets-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #095E63;
+}
+
+/* Grid de mascotas */
+.pets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Tarjeta de mascota */
+.pet-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pet-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón agregar */
+.add-pet-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #095E63;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-pet-btn:hover {
+    background-color: #073d41;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 425px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+}
+
+.modal-content label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.modal-content button {
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.close-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+button[type="submit"] {
+    background-color: #095E63;
+    color: white;
+}
+
+/* Confirmación */
+.confirmation {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    color: green;
+    font-weight: bold;
+}
+/* Estilo para el mensaje de error */
+#connection-status {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ff4d4d;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    z-index: 1000;
+    display: none; /* Oculto por defecto */
+}
+
+/* Clase para mostrar el mensaje */
+#connection-status.visible {
+    display: block;
+}
+
+/* Clase para ocultar el mensaje */
+.hidden {
+    display: none;
+}
+ /* Table Styling */
+ table {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0f2f1;
+}
+table th {
+    background-color: #004d40;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+table tr:hover {
+    background-color: #e0f7fa;
+    transition: background-color 0.3s;
+}
+table td {
+    font-size: 0.9em;
+}
+
+
+/* Button for Adding More Interactivity */
+.cta-button {
+    display: block;
+    margin: 20px auto; /* Centra horizontalmente */
+    background-color: #095E63; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: fit-content; /* Mantiene el tamaño original del botón */
+    padding: 10px 20px; /* Asegura que el botón conserve su tamaño */
+    text-decoration: none;
+}
+.cta-button:hover {
+    background-color: #095E63;
+    transform: scale(1.05);
+}
